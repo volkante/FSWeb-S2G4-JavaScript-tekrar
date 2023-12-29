@@ -136,32 +136,56 @@ sayilar.forEach((item) => {
 
 ucebolunenlerintoplami = ucetambolunenler.reduce(
   (acc,currentValue) => {
-  return acc + currentValue
+  return acc + currentValue;
 }, 0)
 
 //console.log(ucebolunenlerintoplami)
 
 // 3d çözümü
 
-besyuzdenkucuksayilar = sayilar.filter(item=>item<500)
+besyuzdenkucuksayilar = sayilar.filter(item=>item<500);
 
-/* besyuzdenkucuksayilar= [];
-sayilar.filter((item) => {
-    if (item < 500) {
-      besyuzdenkucuksayilar.push(item)
-    }
-  }
-)
-*/
-console.log(besyuzdenkucuksayilar)
+//console.log(besyuzdenkucuksayilar)
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a,b)=>a-b);
+//console.log(siralisayilar)
 
 // 3f çözümü
 
-/* kodlar buraya */
+/*3f. `tekraredensayilar` adında bir dizi oluşturun. sayilar dizisi içerisindeki bazı sayılar birden fazla kere yazılmış. sayilar dizisi içerisinde birden fazla kez yazılmış sayıları tespit ederek kaç kere tekrar edildiğini belirten bir string oluşturulup `tekraredensayilar` dizisine aktarılmasını istiyoruz. Örnek string: "{sayı} sayısı {tekrarSayisi} kere tekrar edilmiştir"
+		ÖRNEK: sayilar dizisi içerisinde 45 sayısı 3 kere yazılmış. "45 sayısı 3 tekrar edilmiştir" stringini `tekraredensayilar` dizisine aktaracağız.
+		💡 İPUCU: Tekrar edilen sayıları ve kaç kere tekrar edildiğini kaydetmek için bir nesne tanımlamalısınız, bu görevi yapabilmek için en az 2 kere döngü yazmalısınız. Birinci döngüde hangi sayının kaç kere tekrar edildiğini tespit edip, 2. döngüde stringi oluşturup verilen diziye aktarmalısınız.*/
+
+
+    let depo = {};
+    for (let sayi of sayilar) {
+      if (depo[sayi]===undefined) {
+        depo[sayi]=1
+      } else {
+        depo[sayi]++
+      }
+    }
+    
+    //console.log(depo) b.n. burayı objeyi console'da görüp anlamak için ben ekledim. 
+    
+    tekraredensayilar=[];
+    for (let key in depo) {
+      let text = `${key} sayısı ${depo[key]} kere tekrar edilmiştir`;
+      tekraredensayilar.push(text);
+    }
+    
+    console.log(tekraredensayilar)
+    
+   
+
+
+
+
+
+  
+
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
